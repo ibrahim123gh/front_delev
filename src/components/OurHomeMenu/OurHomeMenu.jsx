@@ -107,18 +107,7 @@ const OurHomeMenu = () => {
                       ) : (
                         <>
                           <button
-                            onClick={() =>
-                              addToCart(
-                                {
-                                  ...item,
-                                  name: item.title,
-                                  price: parseFloat(
-                                    item.price.replace("₹", "")
-                                  ),
-                                },
-                                1
-                              )
-                            }
+                            onClick={() => addToCart(item, 1)}
                             className="bg-amber-900/30 px-4 py-1.5 rounded-full font-cinzel text-xs sm:text-sm uppercase tracking-wider transition-transform duration-300 hover:scale-110 hover:shadow-lg hover:shadow-amber-900/30 relative overflow-hidden border border-amber-800/50 "
                           >
                             <span className="relative z-10 text-xs text-black ">
@@ -134,8 +123,13 @@ const OurHomeMenu = () => {
             );
           })}
         </div>
-        <div className="felx justify-center mt-16">
-          <Link to={"/menu"}></Link>
+        <div className="flex justify-center mt-16">
+          <Link
+            to={"/menu"}
+            className="bg-amber-900/30 border-2 border-amber-800/30 text-amber-100 px-8 sm:px-10 py-3 rounded-full font-cinzel uppercase tracking-widest transition-all duration-300 hover:bg-amber-800/40 hover:text-amber-50 hover:scale-105 hover:shadow-lg hover:shadow-amber-900/20 backdrop-blur-md"
+          >
+            Explor Full Menu
+          </Link>
         </div>
       </div>
     </div>

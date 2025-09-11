@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useCart } from "../../CartContext/CartContext";
-import { dummyMenuData } from "../../assets/OmhDD";
+import { dummyMenuData } from "../../assets/OmDD";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -14,9 +14,9 @@ const categories = [
   "Drinks",
 ];
 
-const OurHomeMenu = () => {
+const OurMenu = () => {
   const [activeCategory, setActiveCategory] = useState(categories[0]);
-  const displayItem = (dummyMenuData[activeCategory] || []).slice(0, 4);
+  const displayItem = (dummyMenuData[activeCategory] || []).slice(0, 12);
 
   const getQuantity = (id) => {
     return cartItems.find((ci) => ci.id === id)?.quantity || 0;
@@ -27,7 +27,7 @@ const OurHomeMenu = () => {
   return (
     <div className="bg-gradient-to-r from-[#1a120b] via-[#2a1e14] to-[#3e2b1d] py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center bg-clip-text mb-12 text-transparent bg-gradient-to-r from-amber-200 via-amber-300 to-amber-200">
+        <h2 className="text-center bg-clip-text mb-12 text-transparent bg-gradient-to-r from-amber-200 via-amber-300 to-amber-200">
           <span className="font-dansing script block text-5xl sm:text-6xl md:text-7xl mb-2">
             Our Exquisite Menu
           </span>
@@ -124,17 +124,9 @@ const OurHomeMenu = () => {
             );
           })}
         </div>
-        <div className="flex justify-center mt-16">
-          <Link
-            to={"/menu"}
-            className="bg-amber-900/30 border-2 border-amber-800/30 text-amber-100 px-8 sm:px-10 py-3 rounded-full font-cinzel uppercase tracking-widest transition-all duration-300 hover:bg-amber-800/40 hover:text-amber-50 hover:scale-105 hover:shadow-lg hover:shadow-amber-900/20 backdrop-blur-md"
-          >
-            Explor Full Menu
-          </Link>
-        </div>
       </div>
     </div>
   );
 };
 
-export default OurHomeMenu;
+export default OurMenu;

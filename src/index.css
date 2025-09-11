@@ -1,9 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inconsolata:wght@200..900&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Dancing+Script:wght@400..700&family=Inconsolata:wght@200..900&family=Oswald:wght@200..700&display=swap');
 
 @import "tailwindcss";
 
 .font-cursive {
     font-family: "Dancing Script" cursive;
+}
+
+.font-dancingscript {
+    font-family: "Dancing Script", cursive;
+}
+
+.font-cinzel {
+    font-family: "Cinzel", serif;
+}
+
+@keyframes cardEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
 }
 
 @keyframes float {
@@ -34,8 +55,8 @@
     box-shadow: 8px 8px 25px rgba(0, 0, 0, 0.3), -4px -4px 15px rgba(255, 255, 255, 0.05);
 }
 
-.font-serif{
-    font-family: ui-serif, Georgia,Cambria,kw 'Times New Roman', Times, serif;
+.font-serif {
+    font-family: ui-serif, Georgia, Cambria, kw 'Times New Roman', Times, serif;
 }
 
 .orbit {
@@ -63,3 +84,14 @@
         transform: rotate(360deg) translate(150px) rotate(-360deg)
     }
 }
+
+::-webkit-scrollbar {
+    width: 8px;
+    background: #2a1e14;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4a3728;
+    border-radius: 4px;
+}
+
